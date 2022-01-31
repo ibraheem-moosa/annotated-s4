@@ -397,8 +397,8 @@ if __name__ == "__main__":
     parser.add_argument("--colab_tpu", default=False, action="store_true")
 
     args = parser.parse_args()
-
-    if args.colab_tpu:
+    print(args.colab_tpu)
+    if True or args.colab_tpu:
         import jax.tools.colab_tpu
         jax.tools.colab_tpu.setup_tpu()
         print('Setup colab TPU')

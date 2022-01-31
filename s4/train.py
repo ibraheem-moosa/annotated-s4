@@ -1,6 +1,10 @@
 import os
 import shutil
 from functools import partial
+import jax.tools.colab_tpu
+jax.tools.colab_tpu.setup_tpu()
+print('Setup colab TPU')
+
 import jax
 import jax.numpy as np
 import optax

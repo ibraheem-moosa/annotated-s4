@@ -908,7 +908,7 @@ def make_NPLR_HiPPO(N):
     S = nhippo + p[:, np.newaxis] * q[np.newaxis, :]
 
     # Diagonalize to S to V \Lambda V^*
-    Lambda, V = jax.jit(eig, backend="cpu")(S)
+    Lambda, V = jax.jit(eig)(S)
     return nhippo, Lambda, p, q, V
 
 

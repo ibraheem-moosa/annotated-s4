@@ -401,6 +401,7 @@ if __name__ == "__main__":
     if args.colab_tpu:
         import jax.tools.colab_tpu
         jax.tools.colab_tpu.setup_tpu()
+        print('Setup colab TPU')
 
     example_train(
         args.model,

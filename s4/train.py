@@ -393,7 +393,14 @@ if __name__ == "__main__":
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--lr_schedule", default=False, action="store_true")
 
+    # Colab
+    parser.add_argument("--colab_tpu", default=False, action="store_true")
+
     args = parser.parse_args()
+
+    if args.colab_tpu:
+        import jax.tools.colab_tpu
+        jax.tools.colab_tpu.setup_tpu()
 
     example_train(
         args.model,
